@@ -1,0 +1,22 @@
+# Minimal ALS Features Configuration
+# This is the simplest way to enable ALS features with default settings
+
+# Option 1: Enable all features with defaults
+als_features:
+  enabled: true
+
+# Option 2: Enable with custom speed test file sizes
+# als_features:
+#   enabled: true
+#   speedtest:
+#     file_sizes: ["10MB", "100MB", "1GB"]
+
+# Option 3: Disable specific features
+# als_features:
+#   enabled: true
+#   speedtest:
+#     enabled: false
+#   network_tools:
+#     enabled: true
+#   bandwidth:
+#     enabled: true

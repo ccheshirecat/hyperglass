@@ -9,6 +9,7 @@ from .config.web import WebPublic
 from .config.cache import Cache
 from .config.params import ParamsPublic
 from .config.messages import Messages
+from .config.als_features import ALSFeatures
 
 Alignment = t.Union[t.Literal["left"], t.Literal["center"], t.Literal["right"], None]
 StructuredDataField = t.Tuple[str, str, Alignment]
@@ -57,6 +58,7 @@ class UIParameters(ParamsPublic, HyperglassModel):
     cache: Cache
     web: WebPublic
     messages: Messages
+    als_features: ALSFeatures
     version: str
     devices: t.List[UIDevices] = []
     parsed_data_fields: t.Tuple[StructuredDataField, ...]
