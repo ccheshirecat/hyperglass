@@ -1,0 +1,59 @@
+# Example configuration for ALS (Advanced Looking Glass) features
+# Add this section to your hyperglass configuration file
+
+# ALS Features Configuration
+als_features:
+  # Enable/disable all ALS features
+  enabled: true
+  
+  # Speed Test Configuration
+  speedtest:
+    enabled: true
+    file_sizes:
+      - "1MB"
+      - "10MB"
+      - "100MB"
+      - "1GB"
+    max_file_size: "1GB"
+    chunk_size: 4  # KB
+    upload_enabled: true
+    download_enabled: true
+  
+  # Network Tools Configuration
+  network_tools:
+    enabled: true
+    ping_enabled: true
+    traceroute_enabled: true
+    iperf3_enabled: true
+    iperf3_port_range: [30000, 31000]
+    max_ping_count: 20
+    max_traceroute_hops: 64
+    ping_timeout: 30  # seconds
+    traceroute_timeout: 60  # seconds
+  
+  # Bandwidth Monitoring Configuration
+  bandwidth:
+    enabled: true
+    update_interval: 1  # seconds
+    history_length: 60  # seconds
+    excluded_interfaces:
+      - "lo"
+      - "docker"
+      - "br-"
+      - "veth"
+    auto_start: true
+
+# Example: Disable specific features
+# als_features:
+#   enabled: true
+#   speedtest:
+#     enabled: false  # Disable speed test
+#   network_tools:
+#     enabled: true
+#     iperf3_enabled: false  # Disable only iperf3
+#   bandwidth:
+#     enabled: false  # Disable bandwidth monitoring
+
+# Example: Minimal configuration (all features enabled with defaults)
+# als_features:
+#   enabled: true
